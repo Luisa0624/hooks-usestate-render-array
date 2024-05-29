@@ -9,7 +9,11 @@ export const Person = (props) => {
             <h5 className="card-title">{props.name}</h5>
             <p className="card-text">{props.role}</p>
           </div>
+          <div className='mb-4'>
+            <button className='btn btn-success me-2' onClick={handleEdit}>Editar</button>
+            <button className='btn btn-danger'>Eliminar</button>
+          </div>
       </div>
     </div>
-  )
+  ) 
 }

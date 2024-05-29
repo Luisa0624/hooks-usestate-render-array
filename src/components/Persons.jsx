@@ -1,29 +1,27 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Person } from './Person';
 
-export const Persons = () => {
+export const Persons = ({persons, setPersons}) => {
 
-  const [ persons, setPersons ] = useState([
-    {
-      id: 1,
-      name: "Oscar Eduardo",
-      role: "Frontend Developer",
-      img: "https://bootdey.com/img/Content/avatar/avatar6.png",
-    },
-    {
-      id: 2,
-      name: "Carolina",
-      role: "Backend Developer",
-      img: "https://bootdey.com/img/Content/avatar/avatar3.png",
-    },
-    {
-      id: 3,
-      name: "Catalina",
-      role: "UI/UX Designer",
-      img: "https://bootdey.com/img/Content/avatar/avatar8.png",
-    },
-  ]);
+  const [editinId, seteditinId] = useState()
+  const [editedPerson, setEditedPerson] = useState({
+    name: '',
+    role: '',
+    img: ''
+  })
+
+  const handleChange = (e) => {
+    const { name, value} = e.target;
+    setEditedPerson(prevState => ({
+      ... prevState,
+      [name]: value
+    }))
+  }
+
+  const handleEdit = (id) => {
+     setEditingID(id);
+     setIsEditing(true);
+  }
 
   return (
     <div>
@@ -43,6 +41,7 @@ export const Persons = () => {
             )
           })}
         </div>
+        
       </div>
     </div>
   )
