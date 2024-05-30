@@ -1,9 +1,10 @@
 import './App.css';
-import { useState } from 'react'
-import { Persons } from './components/Persons';
+import { Persons } from './components/Persons'
+import { useState } from 'react';
 
 function App() {
-  const [persons, setPersons] = useState([
+
+  const [ persons, setPersons ] = useState([
     {
       id: 1,
       name: "Oscar Eduardo",
@@ -27,10 +28,9 @@ function App() {
   return (
     <div className='App'>
       <div className='container'>
-        <Persons persons={persons} setPersons={setPersons}/>
+        <Persons persons={persons} setPersons={setPersons} />
       </div>
     </div>
-
   );
 }
 
